@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Hero.module.css'; // Assuming you have some styles in a CSS module
 import { ArrowRight, Brush, Users, Heart } from 'lucide-react';
+import  {workspace} from '../Image/assets';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -24,6 +25,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <p className="text-xl text-stone-300 mb-8 leading-relaxed">
               Hyper-realistic pencil artist specializing in portraits and storytelling. 
               Teaching art, transforming communities, and creating connections through creativity.
+              Doing this cause 
+              <span className='text-amber-400 italic'> pencil no di sleep</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
@@ -57,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               </div>
               <div>
                 <Heart className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">12+</div>
+                <div className="text-2xl font-bold text-white">10+</div>
                 <div className="text-stone-400 text-sm">Community Visits</div>
               </div>
             </div>
@@ -67,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <img
-                src="https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={workspace}
                 alt="Featured hyper-realistic pencil portrait"
                 className="w-full h-96 lg:h-[500px] object-cover"
               />

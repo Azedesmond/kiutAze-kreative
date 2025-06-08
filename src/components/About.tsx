@@ -32,7 +32,7 @@ const About: React.FC = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl font-bold text-stone-900 mb-6">
-              About <span className="text-amber-600">KiutAze Kreative</span>
+              About <span className="text-amber-600 italic">Aze Desmond</span>
             </h2>
             
             <div className="space-y-6 text-stone-700 leading-relaxed">
@@ -48,13 +48,13 @@ const About: React.FC = () => {
               </p>
               
               <p>
-                Through KiutAze Kreative, I combine my love for hyper-realistic pencil drawings with 
-                community education, visiting orphanages every two months to teach art, provide HIV 
-                sensitization, and organize creative workshops that bring joy and learning together.
+                Through KiutAze as my brand, I combine my love for hyper-realistic pencil drawings with 
+                community service and education, visiting orphanages every month to teach art, and every after two months 
+                provide HIV sensitization, and organize creative workshops that bring joy and learning together.
               </p>
               
               <p>
-                Whether I'm creating a portrait that captures someone's essence, teaching a child 
+                Whether I'm creating a portrait that captures someone's essence, teaching a child, someone 
                 to draw for the first time, or transforming someone through body painting, every 
                 piece of work carries the same intention: to celebrate the beauty in our shared humanity.
               </p>

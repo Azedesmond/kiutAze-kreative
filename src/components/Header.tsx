@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Palette } from 'lucide-react';
+import { Menu, X, } from 'lucide-react';
+import {logo} from '../Image/assets';
 
 interface HeaderProps {
   activeSection: string;
@@ -48,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => handleNavClick('home')}
           >
-            <Palette className="w-8 h-8 text-amber-400" />
+            <img src={logo} alt="KiutAze Logo" className="w-12 h-12" />
             <span className="text-xl font-bold text-white">
               KiutAze Kreative
             </span>

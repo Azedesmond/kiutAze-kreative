@@ -30,19 +30,19 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: 'hello@kiutazekreative.com',
-      href: 'mailto:hello@kiutazekreative.com'
+      value: 'kiutaze237@gmail.com',
+      href: 'mailto:kiutaze237@gmail.com'
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: 'Phone',
-      value: '+256 XXX XXX XXX',
-      href: 'tel:+256XXXXXXX'
+      value: '+237 650 058 024',
+      href: 'tel:+237650058024'
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
-      value: 'Kampala, Uganda',
+      value: 'Bamenda, Cameroon',
       href: '#'
     }
   ];
@@ -51,13 +51,13 @@ const Contact: React.FC = () => {
     {
       icon: <Instagram className="w-6 h-6" />,
       label: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/kiutaze/profilecard/?igsh=d3l5M3hodHNsZHRl',
       color: 'hover:text-pink-500'
     },
     {
       icon: <Facebook className="w-6 h-6" />,
       label: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/kiutAze',
       color: 'hover:text-blue-500'
     },
     {

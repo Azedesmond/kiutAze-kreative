@@ -18,10 +18,10 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   ];
 
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
-    { icon: <Facebook className="w-5 h-5" />, href: '#', label: 'Facebook' },
+    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/kiutaze/profilecard/?igsh=d3l5M3hodHNsZHRl', label: 'Instagram' },
+    { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/kiutAze', label: 'Facebook' },
     { icon: <MessageCircle className="w-5 h-5" />, href: '#', label: 'WhatsApp' },
-    { icon: <Mail className="w-5 h-5" />, href: 'mailto:hello@kiutazekreative.com', label: 'Email' }
+    { icon: <Mail className="w-5 h-5" />, href: 'mailto:kiutaze237@gmail.com', label: 'Email' }
   ];
 
   return (
