@@ -223,7 +223,7 @@ const Contact: React.FC = () => {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <h4 className="font-semibold text-amber-800 mb-2">Commission Work</h4>
                 <p className="text-amber-700 text-sm">
-                  Custom portraits and artworks available. Typical turnaround time is 2-4 weeks depending on complexity.
+                  Custom portraits and artworks available. Typical turnaround time is 4 days - 4 weeks depending on the size and complexity.
                 </p>
               </div>
               

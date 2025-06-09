@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, Users, Palette, Globe } from 'lucide-react';
 import { CommunityProgram } from '../types';
+import { communityservice, communityservice4, communityservice1, communityservice5} from '../Image/assets';
 
 const CommunityWork: React.FC = () => {
   const programs: CommunityProgram[] = [
@@ -8,15 +9,15 @@ const CommunityWork: React.FC = () => {
       id: '1',
       title: 'Orphanage Art Sessions',
       description: 'Monthly visits teaching art fundamentals to children in local orphanages, fostering creativity and self-expression.',
-      imageUrl: 'https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: 'Various Orphanages',
-      date: 'Every 2 months'
+      imageUrl:communityservice,
+      location: 'Helping Hands Orphanage, Bamenda',
+      date: '3rd May 2025'
     },
     {
       id: '2',
       title: 'HIV Sensitization Program',
       description: 'Educational workshops combining art therapy with health awareness to create safe spaces for important conversations.',
-      imageUrl: 'https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: communityservice1,
       location: 'Community Centers',
       date: 'Quarterly'
     },
@@ -24,16 +25,16 @@ const CommunityWork: React.FC = () => {
       id: '3',
       title: 'Creative Dance Workshops',
       description: 'Integrating movement and visual arts to provide holistic creative expression experiences for youth.',
-      imageUrl: 'https://images.pexels.com/photos/8613076/pexels-photo-8613076.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: communityservice5,
       location: 'Schools & Centers',
       date: 'Monthly'
     }
   ];
 
   const impactStats = [
-    { number: '500+', label: 'Children Reached', icon: <Users className="w-6 h-6" /> },
-    { number: '24+', label: 'Community Visits', icon: <Heart className="w-6 h-6" /> },
-    { number: '12+', label: 'Partner Organizations', icon: <Globe className="w-6 h-6" /> },
+    { number: '200+', label: 'Children Reached', icon: <Users className="w-6 h-6" /> },
+    { number: '10+', label: 'Community Visits', icon: <Heart className="w-6 h-6" /> },
+    { number: '8+', label: 'Partner Organizations', icon: <Globe className="w-6 h-6" /> },
     { number: '3', label: 'Years of Service', icon: <Palette className="w-6 h-6" /> }
   ];
 
@@ -48,7 +49,7 @@ const CommunityWork: React.FC = () => {
           <p className="text-xl text-stone-300 max-w-3xl mx-auto">
             Art has the power to heal, connect, and transform communities. Through regular outreach programs, 
             I'm committed to sharing the joy of creativity with those who need it most, creating lasting 
-            positive change one brushstroke at a time.
+            positive change one pencilstrokes and brushstroke at a time.
           </p>
         </div>
 
@@ -60,8 +61,8 @@ const CommunityWork: React.FC = () => {
               <p className="text-stone-300 mb-6">
                 Every two months, I visit local orphanages and community centers to conduct art workshops, 
                 HIV sensitization programs, and creative expression sessions. These visits aren't just about 
-                teaching art – they're about building connections, fostering hope, and empowering young minds 
-                through creativity.
+                teaching art, they're about building connections, fostering hope, and empowering young minds 
+                through creativity and preaching CHANGE!
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
@@ -80,7 +81,7 @@ const CommunityWork: React.FC = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={communityservice4}
                 alt="Community art workshop"
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
               />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock, Users, Star, BookOpen } from 'lucide-react';
 import { Testimonial } from '../types';
+import { artclass3 } from '../Image/assets';
 
 const ArtClasses: React.FC = () => {
   const classTypes = [
@@ -48,19 +49,19 @@ const ArtClasses: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
       id: '1',
-      name: 'Sarah M.',
+      name: 'Kah Sharin Mbapeh ',
       message: 'The individual sessions have transformed my drawing skills. The personalized approach really helped me overcome my artistic blocks.',
       course: 'Individual Sessions'
     },
     {
       id: '2',
-      name: 'David K.',
-      message: 'My daughter loves the children\'s program! She\'s gained so much confidence and her creativity has flourished.',
+      name: 'Hannah Serah .',
+      message: 'My Two daughter loves the children\'s program! they\'ve gained so much confidence and their creativity has flourished. their paper art skills too have upscaled drastically, Thank you for  doing what you do.',
       course: 'Children\'s Program'
     },
     {
       id: '3',
-      name: 'Maria L.',
+      name: 'Fountsi Arts',
       message: 'The group classes are amazing. Learning alongside others has been so inspiring and motivating.',
       course: 'Group Classes'
     }
@@ -108,7 +109,7 @@ const ArtClasses: React.FC = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1153213/pexels-photo-1153213.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={artclass3}
                 alt="Art class in session"
                 className="w-full h-64 object-cover rounded-xl shadow-md"
               />
