@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Heart, Palette, Users, Target, Star } from 'lucide-react';
+import { exhibition1 } from '../Image/assets';
 
 const About: React.FC = () => {
   const achievements = [
@@ -48,14 +49,14 @@ const About: React.FC = () => {
       {/* Hero Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-stone-900 to-stone-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              About <span className="text-amber-400 italic">Aze Desmond</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            About <span className="text-amber-400 italic">Aze Desmond</span>
+          </h1>
+          <p className="text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
               Artist, Educator, Community Builder
             </p>
-          </div>
+        </div>
         </div>
       </section>
 
@@ -70,28 +71,34 @@ const About: React.FC = () => {
               </h2>
               
               <div className="space-y-6 text-stone-700 leading-relaxed">
-                <p className="text-lg">
-                  Welcome to my creative world. I'm a passionate hyper-realistic pencil artist 
-                  dedicated to bringing stories to life through detailed portraiture and artistic expression.
-                </p>
-                
                 <p>
-                  My journey began with a simple belief: art has the power to connect, heal, and inspire. 
-                  What started as personal expression has evolved into a mission to share the transformative 
-                  power of creativity with communities, especially those who need it most.
-                </p>
-                
-                <p>
-                  Through KiutAze as my brand, I combine my love for hyper-realistic pencil drawings with 
-                  community service and education, visiting orphanages every month to teach art, and every after two months 
-                  provide HIV sensitization, and organize creative workshops that bring joy and learning together.
-                </p>
-                
-                <p>
-                  Whether I'm creating a portrait that captures someone's essence, teaching a child, someone 
-                  to draw for the first time, or transforming someone through body painting, every 
-                  piece of work carries the same intention: to celebrate the beauty in our shared humanity.
-                </p>
+                Let me start by saying <span className="font-semibold">#pencilnodisleep</span>😊
+                <p></p>My journey began with a simple belief in 2019 with me sketching the Paris Tower. From passion to a skill,
+                From a skill to an artist, From an artist to a teacher, From a teacher to a community educator, and finally a multi award winner in arts.
+                : art has the power to connect, heal, and inspire. 
+                What started as personal expression has evolved into a mission to share the transformative 
+                power of creativity with communities, especially those who need it most.
+              </p>
+              <p>
+                I got my first award in 2020 <span className="font-semibold"> ENYSEM Award</span> for Most Creative Youth, and since then, I have been on 
+                a journey of growth and impact. I have been recognized with multiple awards for my contributions to the arts and community service,
+                including the prestigious <span className="font-semibold"> NBACA Artist of the Year</span> in 2022 and 2024.
+                My work has been featured in exhibitions like the <span className="font-semibold"> APWAL Fest 2021 and 2024</span>, and I have had
+                 the honor of collaborating with various organizations
+                to promote art education and community engagement.
+              </p>
+
+              <p>
+                Through KiutAze as my brand, I combine my love for hyper-realistic pencil drawings with 
+                community service and education, visiting orphanages every month to teach art, and every after two months 
+                provide HIV sensitization, and organize creative workshops that bring joy and learning together.
+              </p>
+              
+              <p>
+                Whether I'm creating a portrait that captures someone's essence, teaching a child, someone 
+                to draw for the first time, or transforming someone through body painting, every 
+                piece of work carries the same intention: to celebrate the beauty in our shared humanity.
+              </p>
               </div>
 
               <div className="mt-8 p-6 bg-amber-50 rounded-2xl border-l-4 border-amber-600">
@@ -106,7 +113,7 @@ const About: React.FC = () => {
             {/* Image */}
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1153213/pexels-photo-1153213.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src= {exhibition1}
                 alt="Artist at work"
                 className="w-full h-64 lg:h-96 object-cover rounded-2xl shadow-lg"
               />
@@ -191,7 +198,7 @@ const About: React.FC = () => {
                     <span className="text-amber-600 font-semibold">Expert</span>
                   </div>
                   <div className="w-full bg-stone-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full" style={{ width: '95%' }}></div>
+                    <div className="bg-amber-600 h-2 rounded-full" style={{ width: '90%' }}></div>
                   </div>
                 </div>
 
@@ -211,7 +218,7 @@ const About: React.FC = () => {
                     <span className="text-amber-600 font-semibold">Advanced</span>
                   </div>
                   <div className="w-full bg-stone-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full" style={{ width: '85%' }}></div>
+                    <div className="bg-amber-600 h-2 rounded-full" style={{ width: '75%' }}></div>
                   </div>
                 </div>
 
@@ -243,8 +250,8 @@ const About: React.FC = () => {
               </h2>
               
               <div className="space-y-8">
-                <div className="border-l-4 border-amber-600 pl-6">
-                  <div className="text-amber-600 font-semibold mb-1">2021 - Present</div>
+                <div className="border-l-4 border-green-600 pl-6">
+                  <div className="text-green-600 font-semibold mb-1">2021 - Present</div>
                   <h3 className="text-xl font-bold text-stone-900 mb-2">Professional Artist & Educator</h3>
                   <p className="text-stone-600">
                     Established KiutAze Kreative brand, focusing on hyper-realistic pencil art, 
@@ -252,8 +259,8 @@ const About: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-stone-300 pl-6">
-                  <div className="text-stone-500 font-semibold mb-1">2020 - 2021</div>
+                <div className="border-l-4 border-red-500 pl-6">
+                  <div className="text-red-500 font-semibold mb-1">2022 - Present</div>
                   <h3 className="text-xl font-bold text-stone-900 mb-2">Community Art Volunteer</h3>
                   <p className="text-stone-600">
                     Started volunteering at local orphanages and schools, teaching basic art skills 
@@ -261,8 +268,8 @@ const About: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-stone-300 pl-6">
-                  <div className="text-stone-500 font-semibold mb-1">2018 - 2020</div>
+                <div className="border-l-4 border-yellow-500 pl-6">
+                  <div className="text-yellow-500 font-semibold mb-1">2019 - Present</div>
                   <h3 className="text-xl font-bold text-stone-900 mb-2">Developing Artistic Skills</h3>
                   <p className="text-stone-600">
                     Focused on mastering hyper-realistic pencil techniques and exploring 

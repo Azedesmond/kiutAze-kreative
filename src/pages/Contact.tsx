@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
     {
       icon: <MessageCircle className="w-6 h-6" />,
       label: 'WhatsApp',
-      href: '#',
+      href: 'https://wa.link/iyy9wa',
       color: 'hover:text-green-500'
     }
   ];
@@ -83,11 +83,11 @@ const Contact: React.FC = () => {
     },
     {
       question: 'Do you offer online art classes?',
-      answer: 'Currently, I focus on in-person classes to provide the best learning experience, but I\'m exploring online options.'
+      answer: 'Yes, I do offer online art classes. I focus on in-person classes to provide the best learning experience, but I can arrange online sessions if needed.'
     },
     {
       question: 'Can you travel for community workshops?',
-      answer: 'Yes, I can travel within Cameroon for community workshops and educational programs. Contact me for details.'
+      answer: 'Yes, I can travel within and outside Cameroon for community workshops and educational programs. Contact me for details.'
     }
   ];
 
