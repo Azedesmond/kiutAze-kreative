@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Heart, Palette, Users } from 'lucide-react';
+import {exhibition2} from '../Image/assets';
 
 const About: React.FC = () => {
   const achievements = [
@@ -71,9 +72,9 @@ const About: React.FC = () => {
 
           {/* Achievements Grid */}
           <div className="space-y-8">
-            <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="https://images.pexels.com/photos/1153213/pexels-photo-1153213.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src= {exhibition2}
                 alt="Artist at work"
                 className="w-full h-64 object-cover rounded-2xl shadow-lg"
               />

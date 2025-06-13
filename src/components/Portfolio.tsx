@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Artwork } from '../types';
+import {portrait3, potrait,bodypainting2,bodypainting3,bodypotrait} from '../Image/assets'; // Adjust the import path as necessary
 
 const Portfolio: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -19,25 +20,41 @@ const Portfolio: React.FC = () => {
       id: '1',
       title: 'Portrait of Resilience',
       description: 'A hyper-realistic portrait capturing the strength and determination in the subject\'s eyes.',
-      imageUrl: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: portrait3,
       category: 'portraits',
-      year: '2024'
+      year: '2022'
     },
     {
       id: '2',
       title: 'The Elder\'s Wisdom',
       description: 'Detailed pencil work showcasing the character lines that tell a lifetime of stories.',
-      imageUrl: 'https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: potrait,
       category: 'portraits',
-      year: '2024'
+      year: '2022'
     },
     {
       id: '3',
       title: 'Festival Transformation',
       description: 'Body painting artwork created for a cultural festival celebration.',
-      imageUrl: 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: bodypainting2,
       category: 'body-painting',
-      year: '2023'
+      year: '2025'
+    },
+    {
+      id: '5',
+      title: 'Photoshoot Transformation',
+      description: 'Body painting artwork created for a photoshoot session.',
+      imageUrl: bodypainting3,
+      category: 'body-painting',
+      year: '2025'
+    },
+    {
+      id: '6',
+      title: 'Orphanage Art Session',
+      description: 'Body painting artwork created for a cultural festival celebration.',
+      imageUrl: bodypotrait,
+      category: 'body-painting',
+      year: '2025'
     },
     {
       id: '4',

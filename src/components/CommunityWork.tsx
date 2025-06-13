@@ -139,6 +139,7 @@ const CommunityWork: React.FC = () => {
           </p>
           <button className="bg-stone-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-stone-800 transition-colors duration-200">
             Get Involved
+            
           </button>
         </div>
       </div>
