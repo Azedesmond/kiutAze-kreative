@@ -11,6 +11,8 @@ import workspace3 from './workspace3.jpg';
 import portrait3 from './portrait3.webp';
 import potrait from './potrait.jpg';
 import portrait8 from './portrait8.webp';
+import portrait5 from './portrait5.jpg';
+import story2 from './story2.webp';
 import bodypainting1 from './bodypainting1.jpg';
 import bodypainting2 from './bodypainting2.jpg';
 import bodypainting3 from './bodypainting3.jpg';
@@ -21,13 +23,15 @@ import communityservice2 from './communityservice2.jpg';
 import communityservice3 from './communityservice3.jpg';
 import communityservice4 from './communityservice4.jpg';
 import communityservice5 from './communityservice5.jpg';
+import story4 from './story4.jpg';
+import story from './story.jpg';
 
 
 export {
-    apwal, portrait3, potrait, portrait8,
+    apwal, portrait3, potrait, portrait8,portrait5,story4,story,
     artclass,artclass1,artclass2,artclass3,artclass4,
     logo,bodypainting1,bodypainting2,bodypainting3,bodypotrait,
-    workspace,workspace3, exhibition1,
+    workspace,workspace3, exhibition1,story2,
     communityservice,communityservice1,communityservice2,communityservice3,communityservice4,communityservice5,
 }
    

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { Artwork } from '../types';
+import { portrait3,potrait, bodypainting2,story2,story, bodypainting3, story4,bodypotrait, portrait5 } from '../Image/assets';
 
 const Portfolio: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -19,39 +20,39 @@ const Portfolio: React.FC = () => {
       id: '1',
       title: 'Portrait of Resilience',
       description: 'A hyper-realistic portrait capturing the strength and determination in the subject\'s eyes.',
-      imageUrl: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: portrait3,
       category: 'portraits',
-      year: '2024'
+      year: '2022'
     },
     {
       id: '2',
-      title: 'The Elder\'s Wisdom',
+      title: 'Black Serenity',
       description: 'Detailed pencil work showcasing the character lines that tell a lifetime of stories.',
-      imageUrl: 'https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: potrait,
       category: 'portraits',
-      year: '2024'
+      year: '2022'
     },
     {
       id: '3',
       title: 'Festival Transformation',
       description: 'Body painting artwork created for a cultural festival celebration.',
-      imageUrl: 'https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: bodypainting2,
       category: 'body-painting',
-      year: '2023'
+      year: '2025'
     },
     {
       id: '4',
-      title: 'Mother and Child',
-      description: 'A touching portrayal of maternal love through hyper-realistic pencil techniques.',
-      imageUrl: 'https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Shrewd Leadership',
+      description: 'A touching portrayal of Black history, tradition, and the power of individual love through hyper-realistic pencil techniques.',
+      imageUrl: story2,
       category: 'story-series',
       year: '2024'
     },
     {
       id: '5',
       title: 'Tribal Heritage',
-      description: 'Body art celebrating traditional African patterns and cultural identity.',
-      imageUrl: 'https://images.pexels.com/photos/1674664/pexels-photo-1674664.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Body art celebrating traditional African patterns and cultural identity. Done with the children of the Helping Hands Orphanage Home in Bamenda',
+      imageUrl: bodypotrait,
       category: 'body-painting',
       year: '2023'
     },
@@ -59,31 +60,31 @@ const Portfolio: React.FC = () => {
       id: '6',
       title: 'The Dreamer',
       description: 'A portrait series exploring the hopes and aspirations of young minds.',
-      imageUrl: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: portrait5,
       category: 'portraits',
       year: '2024'
     },
     {
       id: '7',
-      title: 'Urban Stories',
-      description: 'A series capturing the essence of city life through detailed character studies.',
-      imageUrl: 'https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'The Inner Man',
+      description: 'A series capturing the essence of identifying oneself and emerging from the shadows.',
+      imageUrl: story4,
       category: 'story-series',
       year: '2023'
     },
     {
       id: '8',
-      title: 'Cultural Celebration',
+      title: 'Photoshoot Session',
       description: 'Vibrant body painting celebrating traditional ceremonies and festivals.',
-      imageUrl: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: bodypainting3,
       category: 'body-painting',
-      year: '2024'
+      year: '2025'
     },
     {
       id: '9',
-      title: 'Generations',
+      title: 'Tron Kanda',
       description: 'A powerful portrait series showing the connection between young and old.',
-      imageUrl: 'https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800',
+      imageUrl: story,
       category: 'story-series',
       year: '2024'
     }
