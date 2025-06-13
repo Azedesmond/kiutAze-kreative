@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../components/Hero.module.css';
-import { ArrowRight, Brush, Users, Heart, Palette, Award } from 'lucide-react';
+import { ArrowRight, Brush, Users, Heart, Palette} from 'lucide-react';
 import { workspace, artclass3, communityservice4 } from '../Image/assets';
 
 const Home: React.FC = () => {

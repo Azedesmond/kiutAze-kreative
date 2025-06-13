@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Heart, Palette, Users } from 'lucide-react';
-import {exhibition2} from '../Image/assets';
+import {exhibition1} from '../Image/assets';
 
 const About: React.FC = () => {
   const achievements = [
@@ -36,6 +36,7 @@ const About: React.FC = () => {
               About <span className="text-amber-600 italic">Aze Desmond</span>
             </h2>
             
+            
             <div className="space-y-6 text-stone-700 leading-relaxed">
               <p className="text-lg">
                 Welcome to my creative world. I'm a passionate hyper-realistic pencil artist 
@@ -43,11 +44,21 @@ const About: React.FC = () => {
               </p>
               
               <p>
-                My journey began with a simple belief: art has the power to connect, heal, and inspire. 
+                My journey began with a simple belief in 2019 with me sketching the Paris Tower. From passion to a skill,
+                From a skill to an artist, From an artist to a teacher, From a teacher to a community educator, and finally a multi award winner in arts.
+                : art has the power to connect, heal, and inspire. 
                 What started as personal expression has evolved into a mission to share the transformative 
                 power of creativity with communities, especially those who need it most.
               </p>
-              
+              <p>
+                I got my first award in 2020 <span className="font-semibold"> ENYSEM Award</span> for Most Creative Youth, and since then, I have been on 
+                a journey of growth and impact. I have been recognized with multiple awards for my contributions to the arts and community service,
+                including the prestigious <span className="font-semibold"> NBACA Artist of the Year</span> in 2022 and 2024.
+                My work has been featured in exhibitions like the <span className="font-semibold"> APWAL Fest 2021 and 2024</span>, and I have had
+                 the honor of collaborating with various organizations
+                to promote art education and community engagement.
+              </p>
+
               <p>
                 Through KiutAze as my brand, I combine my love for hyper-realistic pencil drawings with 
                 community service and education, visiting orphanages every month to teach art, and every after two months 
@@ -74,7 +85,7 @@ const About: React.FC = () => {
           <div className="space-y-8">
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
-                src= {exhibition2}
+                src= {exhibition1}
                 alt="Artist at work"
                 className="w-full h-64 object-cover rounded-2xl shadow-lg"
               />
