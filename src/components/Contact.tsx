@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
       value: 'Bamenda, Cameroon',
-      href: '#'
+      href: 'https://maps.app.goo.gl/dUpeyhQ4aZMx7wuc7'
     }
   ];
 
