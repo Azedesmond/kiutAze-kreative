@@ -41,22 +41,22 @@ const CommunityWork: React.FC = () => {
 
   const upcomingEvents = [
     {
-      title: 'Art Workshop at St. Mary\'s Orphanage',
-      date: 'March 15, 2025',
-      time: '2:00 PM - 5:00 PM',
+      title: 'Art Workshop at Mispa Orphanage',
+      date: 'June 28, 2025',
+      time: '10:00 AM - 2:00 PM',
       location: 'Bamenda, Cameroon'
     },
     {
-      title: 'HIV Awareness & Art Therapy Session',
-      date: 'March 28, 2025',
-      time: '10:00 AM - 3:00 PM',
+      title: 'The Gathering- A self-care and wellness event',
+      date: 'July 11, 2025',
+      time: 'Sleepover',
       location: 'Community Center, Bamenda'
     },
     {
       title: 'Youth Creative Expression Workshop',
-      date: 'April 5, 2025',
+      date: 'November 29, 2025',
       time: '1:00 PM - 4:00 PM',
-      location: 'Local School, Bamenda'
+      location: 'University of Bamenda, Northwest Region, Cameroon'
     }
   ];
 

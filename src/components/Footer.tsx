@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/kiutaze/profilecard/?igsh=d3l5M3hodHNsZHRl', label: 'Instagram' },
     { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/kiutAze', label: 'Facebook' },
-    { icon: <MessageCircle className="w-5 h-5" />, href: '#', label: 'WhatsApp' },
+    { icon: <MessageCircle className="w-5 h-5" />, href: 'https://wa.link/iyy9wa', label: 'WhatsApp' },
     { icon: <Mail className="w-5 h-5" />, href: 'mailto:kiutaze237@gmail.com', label: 'Email' }
   ];
 
