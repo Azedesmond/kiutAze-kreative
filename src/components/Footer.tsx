@@ -27,40 +27,10 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubscribing(true);
-    
-    try {
-      // Create mailto link for newsletter subscription
-      const subject = encodeURIComponent('Newsletter Subscription - KiutAze Kreative');
-      const body = encodeURIComponent(`Hello,
-
-I would like to subscribe to the KiutAze Kreative newsletter.
-
-Email: ${email}
-
-Thank you!`);
-      
-      const mailtoLink = `mailto:kiutaze237@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      alert('Thank you for subscribing! Your email client will open to complete the subscription.');
-      setEmail('');
-    } catch {
-      alert('There was an error processing your subscription. Please try again.');
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
-
   return (
     <footer className="bg-stone-900 text-white py-8 lg:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-3">

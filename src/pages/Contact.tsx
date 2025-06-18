@@ -20,34 +20,11 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSending(true);
-
-    try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`${formData.subject} - ${formData.name}`);
-      const body = encodeURIComponent(`Name: ${formData.name}
-Email: ${formData.email}
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
----
-Sent from KiutAze Kreative Contact Form`);
-      
-      const mailtoLink = `mailto:kiutaze237@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      alert('Thank you for your message! Your email client will open to send the message. I\'ll get back to you soon.');
-      
-      // Reset form
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch {
-      alert('There was an error processing your message. Please try again or contact me directly.');
-    } finally {
-      setIsSending(false);
-    }
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    // Reset form
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    alert('Thank you for your message! I\'ll get back to you soon.');
   };
 
   const contactInfo = [
