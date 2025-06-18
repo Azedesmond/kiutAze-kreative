@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, Instagram, Facebook, MessageCircle, Mail, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -25,22 +27,52 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubscribing(true);
+    
+    try {
+      // Create mailto link for newsletter subscription
+      const subject = encodeURIComponent('Newsletter Subscription - KiutAze Kreative');
+      const body = encodeURIComponent(`Hello,
+
+I would like to subscribe to the KiutAze Kreative newsletter.
+
+Email: ${email}
+
+Thank you!`);
+      
+      const mailtoLink = `mailto:kiutaze237@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      alert('Thank you for subscribing! Your email client will open to complete the subscription.');
+      setEmail('');
+    } catch (error) {
+      alert('There was an error processing your subscription. Please try again.');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
-    <footer className="bg-stone-900 text-white py-12 lg:py-16">
+    <footer className="bg-stone-900 text-white py-8 lg:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Palette className="w-8 h-8 text-amber-400" />
-              <span className="text-xl lg:text-2xl font-bold">KiutAze Kreative</span>
+            <div className="flex items-center space-x-2 mb-3">
+              <Palette className="w-7 h-7 text-amber-400" />
+              <span className="text-lg lg:text-xl font-bold">KiutAze Kreative</span>
             </div>
-            <p className="text-stone-400 mb-6 max-w-md text-sm lg:text-base">
+            <p className="text-stone-400 mb-4 max-w-md text-sm">
               Bringing art to life through hyper-realistic pencil drawings, body painting, 
               and community education. Creating connections that inspire and transform lives 
               through the power of creativity.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -56,14 +88,14 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-base font-semibold mb-3">Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
                     onClick={handleLinkClick}
-                    className="text-stone-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                    className="text-stone-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -74,8 +106,8 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-stone-400 text-sm lg:text-base">
+            <h3 className="text-base font-semibold mb-3">Services</h3>
+            <ul className="space-y-2 text-stone-400 text-sm">
               <li>Custom Portraits</li>
               <li>Body Painting</li>
               <li>Art Classes</li>
@@ -87,35 +119,41 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="bg-stone-800 rounded-2xl p-6 lg:p-8 mb-12">
+        <div className="bg-stone-800 rounded-xl p-4 lg:p-6 mb-6">
           <div className="text-center">
-            <h3 className="text-xl lg:text-2xl font-bold mb-4">Stay Connected</h3>
-            <p className="text-stone-400 mb-6 max-w-2xl mx-auto text-sm lg:text-base">
-              Get updates on new artworks, upcoming classes, and community events. 
-              Join our creative community and never miss an opportunity to grow your artistic journey.
+            <h3 className="text-lg lg:text-xl font-bold mb-2">Stay Connected</h3>
+            <p className="text-stone-400 mb-4 max-w-2xl mx-auto text-sm">
+              Get updates on new artworks, upcoming classes, and community events.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm lg:text-base"
+                required
+                className="flex-1 px-3 py-2 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
               />
-              <button className="bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200 text-sm lg:text-base">
-                Subscribe
+              <button 
+                type="submit"
+                disabled={isSubscribing}
+                className="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors duration-200 text-sm disabled:opacity-50"
+              >
+                {isSubscribing ? 'Subscribing...' : 'Subscribe'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-stone-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-stone-400 text-sm lg:text-base">
+        <div className="border-t border-stone-800 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+            <div className="text-stone-400 text-sm">
               © {currentYear} KiutAze Kreative. All rights reserved.
             </div>
-            <div className="flex items-center space-x-1 text-stone-400 text-sm lg:text-base">
+            <div className="flex items-center space-x-1 text-stone-400 text-sm">
               <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500" fill="currentColor" />
+              <Heart className="w-3 h-3 text-red-500" fill="currentColor" />
               <span>for the art community</span>
             </div>
           </div>
