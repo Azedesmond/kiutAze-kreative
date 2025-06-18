@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -17,13 +18,36 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    setIsSending(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`${formData.subject} - ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from KiutAze Kreative Contact Form`);
+      
+      const mailtoLink = `mailto:kiutaze237@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      alert('Thank you for your message! Your email client will open to send the message. I\'ll get back to you soon.');
+      
+      // Reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      alert('There was an error processing your message. Please try again or contact me directly.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const contactInfo = [
@@ -94,13 +118,13 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-stone-900 to-stone-800 text-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-stone-900 to-stone-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6">
               Get In <span className="text-amber-400">Touch</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
               Ready to start your artistic journey, commission a piece, or collaborate on a community project? 
               I'd love to hear from you. Let's create something beautiful together.
             </p>
@@ -109,15 +133,15 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16 lg:py-20 bg-stone-50">
+      <section className="py-12 lg:py-16 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
               <h2 className="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">Send Me a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">
                       Your Name *
@@ -190,16 +214,17 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-amber-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  disabled={isSending}
+                  className="w-full bg-amber-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50"
                 >
                   <Send className="w-5 h-5" />
-                  <span>Send Message</span>
+                  <span>{isSending ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </form>
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6 lg:space-y-8">
               {/* Contact Details */}
               <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-stone-900 mb-6">Contact Information</h3>
@@ -252,22 +277,22 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Quick Info Cards */}
-              <div className="space-y-4">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 lg:p-6">
                   <h4 className="font-semibold text-blue-800 mb-2">Commission Work</h4>
                   <p className="text-blue-700 text-sm">
-                    Custom portraits and artworks available. Typical turnaround time is 4 days - 4 weeks depending on the size and complexity.
+                    Custom portraits and artworks available. Typical turnaround time is 4 days - 4 weeks.
                   </p>
                 </div>
                 
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <div className="bg-green-50 border border-green-200 rounded-xl p-4 lg:p-6">
                   <h4 className="font-semibold text-green-800 mb-2">Art Classes</h4>
                   <p className="text-green-700 text-sm">
-                    Individual and group sessions available. Flexible scheduling to accommodate your needs.
+                    Individual and group sessions available. Flexible scheduling.
                   </p>
                 </div>
                 
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
+                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 lg:p-6 sm:col-span-2 lg:col-span-1 xl:col-span-2">
                   <h4 className="font-semibold text-purple-800 mb-2">Community Programs</h4>
                   <p className="text-purple-700 text-sm">
                     Partner with us for community outreach, school programs, or organizational workshops.
@@ -280,10 +305,10 @@ const Contact: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-stone-900 mb-4">
+          <div className="text-center mb-8 lg:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 mb-4">
               Frequently Asked <span className="text-amber-600">Questions</span>
             </h2>
           </div>

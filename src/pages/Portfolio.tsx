@@ -115,13 +115,13 @@ const Portfolio: React.FC = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-stone-900 to-stone-800 text-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-stone-900 to-stone-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6">
               My <span className="text-amber-400">Portfolio</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl text-stone-300 max-w-4xl mx-auto">
               A collection of hyper-realistic pencil drawings, body painting artworks, 
               and creative pieces that tell stories and capture the essence of humanity.
             </p>
@@ -130,15 +130,15 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* Portfolio Content */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mb-12 lg:mb-16">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 lg:mb-12">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full font-medium transition-all duration-200 text-sm lg:text-base ${
+                className={`px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-full font-medium transition-all duration-200 text-sm lg:text-base ${
                   selectedCategory === category.id
                     ? 'bg-amber-600 text-white shadow-lg'
                     : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
@@ -149,27 +149,27 @@ const Portfolio: React.FC = () => {
             ))}
           </div>
 
-          {/* Artwork Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+          {/* Artwork Grid - Consistent across all screen sizes */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
             {filteredArtworks.map((artwork) => (
               <div
                 key={artwork.id}
                 className="group cursor-pointer"
                 onClick={() => openLightbox(artwork)}
               >
-                <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden rounded-xl lg:rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <img
                     src={artwork.imageUrl}
                     alt={artwork.title}
-                    className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 2xl:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute top-4 right-4">
-                      <Eye className="w-6 h-6 text-white" />
+                    <div className="absolute top-2 sm:top-3 lg:top-4 right-2 sm:right-3 lg:right-4">
+                      <Eye className="w-4 h-4 sm:w-5 h-5 lg:w-6 lg:h-6 text-white" />
                     </div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="text-lg lg:text-xl font-semibold mb-2">{artwork.title}</h3>
-                      <p className="text-stone-200 text-sm mb-2">{artwork.year}</p>
+                    <div className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-2 sm:left-3 lg:left-4 text-white">
+                      <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold mb-1 lg:mb-2 line-clamp-2">{artwork.title}</h3>
+                      <p className="text-stone-200 text-xs sm:text-sm mb-1 lg:mb-2">{artwork.year}</p>
                       <span className="inline-block bg-amber-600 text-white text-xs px-2 py-1 rounded-full">
                         {categories.find(cat => cat.id === artwork.category)?.label}
                       </span>
