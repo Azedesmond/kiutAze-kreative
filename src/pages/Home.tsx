@@ -48,7 +48,7 @@ const Home: React.FC = () => {
                 <span className='text-amber-400 italic'> pencil no di sleep</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <div className="flex col-2 sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                 <Link
                   to="/portfolio"
                   className="bg-amber-400 text-stone-900 px-6 lg:px-8 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-colors duration-200 flex items-center justify-center space-x-2"
