@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  const [isSending, setIsSending] = useState(false);
+  // Removed unused isSending state
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -191,11 +191,10 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  disabled={isSending}
-                  className="w-full bg-amber-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  className="w-full bg-amber-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Send className="w-5 h-5" />
-                  <span>{isSending ? 'Sending...' : 'Send Message'}</span>
+                  <span>Send Message</span>
                 </button>
               </form>
             </div>

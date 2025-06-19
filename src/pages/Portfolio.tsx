@@ -165,7 +165,7 @@ const Portfolio: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute top-2 sm:top-3 lg:top-4 right-2 sm:right-3 lg:right-4">
-                      <Eye className="w-4 h-4 sm:w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                      <Eye className="w-4 h-4 sm:w-5 lg:w-6 lg:h-6 text-white" />
                     </div>
                     <div className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-2 sm:left-3 lg:left-4 text-white">
                       <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold mb-1 lg:mb-2 line-clamp-2">{artwork.title}</h3>

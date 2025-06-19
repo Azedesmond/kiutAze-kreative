@@ -4,7 +4,6 @@ import { Palette, Instagram, Facebook, MessageCircle, Mail, Heart } from 'lucide
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [isSubscribing, setIsSubscribing] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -26,6 +25,16 @@ const Footer: React.FC = () => {
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  function handleNewsletterSubmit(event: React.FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
+    // Here you would typically send the email to your backend or a newsletter service.
+    // For now, just clear the input and show a simple alert.
+    if (email.trim()) {
+      alert('Thank you for subscribing!');
+      setEmail('');
+    }
+  }
 
   return (
     <footer className="bg-stone-900 text-white py-8 lg:py-10">
@@ -95,24 +104,22 @@ const Footer: React.FC = () => {
             <p className="text-stone-400 mb-4 max-w-2xl mx-auto text-sm">
               Get updates on new artworks, upcoming classes, and community events.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                required
-                className="flex-1 px-3 py-2 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
-              />
-              <button 
-                type="submit"
-                disabled={isSubscribing}
-                className="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors duration-200 text-sm disabled:opacity-50"
-              >
-                {isSubscribing ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
-          </div>
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 px-3 py-2 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+            />
+            <button 
+              type="submit"
+              className="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors duration-200 text-sm"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
 
         {/* Bottom Section */}
@@ -128,6 +135,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );
